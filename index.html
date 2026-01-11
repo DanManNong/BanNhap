@@ -1,84 +1,316 @@
-Chào bạn,
-
-Tôi đã chuyển 21 ý chính được tóm tắt từ tài liệu sang định dạng HTML như yêu cầu của bạn.
-
-``` html
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tóm tắt 21 Ý Chính Báo Cáo EBI 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>阮进峰 | 知识 • 法律 • 科技</title>
+    
+    <meta name="google-site-verification" content="sJw3mavjnDOT8pJS4dhfcNW53G4NM4bc0sBu-ertx4g" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WM8D9SK71"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4WM8D9SK71', { 'anonymize_ip': true });
+    </script>
+
+    <meta name="description" content="阮进峰 (Nguyễn Tấn Phong) - 数字经济专家、仲裁员、法律与房地产顾问。">
+    <meta property="og:title" content="阮进峰 | 知识 • 法律 • 科技">
+    <meta property="og:image" content="https://nguyentanphong.com/avatar-nguyentanphong.jpg">
+    <meta property="og:url" content="https://nguyentanphong.com">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "阮进峰 (Nguyễn Tấn Phong)",
+      "url": "https://nguyentanphong.com",
+      "image": "https://nguyentanphong.com/avatar-nguyentanphong.jpg",
+      "jobTitle": "数字经济与法律专家",
+      "description": "电子商务战略咨询专家、国际商业仲裁员。与 A05/PA05 合作进行网络安全培训，并协调‘不孤单’行动。",
+      "affiliation": [
+        { "@type": "Organization", "name": "越南电子商务协会 (VECOM)" },
+        { "@type": "Organization", "name": "胡志明市工贸局" }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --zen-bg: #2C2C2C;
+            --zen-text: #FFFFFF;
+            --zen-copper: #E0AA79;
+            --zen-border: rgba(224, 170, 121, 0.25);
+        }
+        body { 
+            font-family: 'Noto Sans SC', 'Inter', sans-serif; 
+            background-color: var(--zen-bg);
+            color: var(--zen-text);
+            background-image: radial-gradient(rgba(224, 170, 121, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
             line-height: 1.6;
-            color: #333;
-            margin: 20px;
-            background-color: #f4f4f4;
+            overflow-x: hidden;
         }
-        .summary-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        main { padding-left: 10%; padding-right: 10%; width: 100%; margin: 0 auto; }
+        @media (min-width: 1024px) { main { padding-left: 0; padding-right: 0; } }
+
+        .header-fixed {
+            display: flex;
+            justify-content: center;
+            white-space: nowrap;
+            font-size: clamp(10px, 2.3vw, 14px);
+            letter-spacing: 0.8em;
+            text-indent: 0.8em;
+            width: 100%;
+            font-weight: 400;
+            color: #AAA;
         }
-        h2 {
-            color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .name-fixed {
+            white-space: nowrap;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            font-size: clamp(1.5rem, 6vw, 3rem);
+            color: var(--zen-copper);
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .zen-btn {
+            padding: 12px 32px;
+            background-color: transparent;
+            border: 1px solid rgba(224, 170, 121, 0.4);
+            color: var(--zen-copper);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 500;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
-        li {
-            margin-bottom: 15px;
-            padding-left: 20px;
-            position: relative;
+        .zen-btn:hover {
+            background-color: rgba(224, 170, 121, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        li::before {
-            content: '•';
-            color: #28a745;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+        .pillar-grid {
+            display: grid;
+            grid-template-cols: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 6rem;
+            width: 100%;
         }
-        strong {
-            color: #d9534f;
+        @media (min-width: 1024px) { .pillar-grid { grid-template-cols: repeat(5, 1fr); gap: 2rem; } }
+        .pillar-box {
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--zen-border);
+            text-align: center;
         }
+        .lecture-box, .contact-box-sync {
+            min-height: 120px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--zen-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+            text-align: center;
+        }
+        .lecture-box:hover, .contact-box-sync:hover {
+            border-color: var(--zen-copper);
+            background-color: rgba(224, 170, 121, 0.08);
+        }
+        .contact-grid-layout {
+            display: grid;
+            grid-template-cols: repeat(3, 1fr);
+            gap: 12px;
+            width: 100%;
+        }
+        @media (min-width: 1024px) { .contact-grid-layout { grid-template-cols: repeat(6, 1fr); gap: 15px; } }
+        .signature-img {
+            width: 12rem;
+            filter: brightness(0) invert(1);
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+        }
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(20, 20, 20, 0.98); backdrop-filter: blur(20px); z-index: 100; align-items: center; justify-content: center; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .stagger { opacity: 0; animation: fadeUp 1.2s forwards; }
     </style>
 </head>
-<body>
-    <div class="summary-container">
-        <h2>Tóm Tắt 21 Ý Chính Báo Cáo Chỉ Số Thương Mại Điện Tử Việt Nam 2025 (EBI 2025)</h2>
-        <ol>
-            <li>Thương mại điện tử (TMĐT) Việt Nam đạt quy mô ước tính <strong>32 tỷ USD</strong> với tốc độ tăng trưởng <strong>27%</strong> trong năm 2024.</li>
-            <li>TMĐT chiếm khoảng <strong>12%</strong> tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng, tăng từ mức 10% của năm 2023.</li>
-            <li>TMĐT Việt Nam đang chuẩn bị bước vào <strong>giai đoạn thứ tư</strong> – giai đoạn phát triển nhanh và bền vững, dự kiến bắt đầu từ năm 2026.</li>
-            <li>Kế hoạch tổng thể Phát triển TMĐT quốc gia giai đoạn <strong>2026-2030</strong> và <strong>Luật TMĐT</strong> được kỳ vọng sẽ đóng vai trò trung tâm cho giai đoạn phát triển mới.</li>
-            <li>Kim ngạch <strong>nhập khẩu trực tuyến</strong> hàng hóa B2C (từ nước ngoài về Việt Nam) năm 2024 ước đạt <strong>2,4 tỷ USD</strong>.</li>
-            <li>Kim ngạch <strong>xuất khẩu trực tuyến</strong> hàng hóa B2C (từ Việt Nam ra nước ngoài) năm 2024 ước đạt <strong>1,7 tỷ USD</strong>.</li>
-            <li>Quy định miễn <strong>thuế GTGT</strong> đối với hàng hóa nhập khẩu qua chuyển phát nhanh có giá trị dưới 1 triệu đồng đã bị <strong>bãi bỏ</strong>, có hiệu lực từ 03/01/2025.</li>
-            <li>Luật số 56/2024/QH15, có hiệu lực từ 01/04/2025, quy định các tổ chức quản lý sàn TMĐT, nền tảng số có chức năng thanh toán phải thực hiện <strong>khấu trừ, nộp thuế thay</strong> cho hộ kinh doanh, cá nhân kinh doanh trên nền tảng.</li>
-            <li>Dự thảo Nghị định mới đề xuất miễn thuế nhập khẩu cho đơn hàng TMĐT dưới 2 triệu đồng nhưng có <strong>giới hạn định mức miễn thuế là 96 triệu đồng/năm/người mua</strong>.</li>
-            <li>Thị trường xuất khẩu trực tuyến ưu tiên nhất được các doanh nghiệp lựa chọn là <strong>Trung Quốc (39%)</strong>, tiếp theo là Hàn Quốc (24%) và Nhật Bản (22%).</li>
-            <li>Dự thảo Kế hoạch 2026-2030 đặt mục tiêu phát triển TMĐT theo hướng <strong>xanh, tuần hoàn, bền vững</strong>.</li>
-            <li>Mục tiêu cụ thể là giảm tỉ lệ sản phẩm TMĐT sử dụng <strong>bao bì nhựa xuống tối đa 45%</strong> và tăng tỉ lệ sử dụng <strong>bao bì tái chế lên 50%</strong>.</li>
-            <li>Tác động tiêu cực lớn nhất của TMĐT đến môi trường là làm tăng lượng <strong>rác thải bao bì</strong>, ước tính lượng chất thải nhựa bao bì từ TMĐT Việt Nam năm 2023 lên tới 170 nghìn tấn.</li>
-            <li>Bộ Tiêu chí TMĐT Xanh đã được WWF-Việt Nam công bố để hỗ trợ các doanh nghiệp xây dựng lộ trình triển khai các hành động thân thiện với môi trường.</li>
-            <li><strong>Hà Nội</strong> dẫn đầu xếp hạng Chỉ số Thương mại điện tử Việt Nam 2025 (<strong>74,7 điểm</strong>), tiếp theo là TP. Hồ Chí Minh (<strong>73,5 điểm</strong>) và Đà Nẵng (<strong>28,1 điểm</strong>).</li>
-            <li>Chỉ số EBI được tính toán dựa trên ba nhóm tiêu chí: <strong>Giao dịch B2C (60%)</strong>, Giao dịch B2B (30%) và Hạ tầng (10%).</li>
-            <li><strong>46%</strong> doanh nghiệp tham gia khảo sát có xây dựng <strong>website riêng</strong> để quảng bá và kinh doanh.</li>
-            <li><strong>52%</strong> doanh nghiệp có hoạt động kinh doanh qua <strong>mạng xã hội</strong> (Facebook, Zalo, Instagram,...).</li>
-            <li><strong>Mạng xã hội</strong> là kênh được đánh giá đem lại <strong>hiệu quả bán sản phẩm cao nhất</strong> cho doanh nghiệp (47% đánh giá rất cao).</li>
-            <li>Hai khó khăn lớn nhất khi triển khai TMĐT là <strong>đảm bảo an toàn, bảo mật dữ liệu</strong> và <strong>xây dựng chiến lược kinh doanh</strong> trên môi trường TMĐT (cùng 44% doanh nghiệp).</li>
-            <li>Hai nhu cầu hỗ trợ lớn nhất từ cơ quan nhà nước là <strong>Đào tạo, tập huấn kỹ năng TMĐT</strong> (62%) và <strong>Tổ chức các hoạt động xúc tiến thương mại, kết nối giao thương</strong> (62%).</li>
-        </ol>
+<body class="min-h-screen flex flex-col">
+
+    <div id="passwordModal" class="modal-overlay">
+        <div class="max-w-md w-full text-center p-12 bg-[#1a1a1a] border border-white/10 rounded-sm">
+            <h3 id="modalTitle" class="text-[12px] uppercase tracking-[0.2em] font-light mb-10 text-stone-400">合作伙伴身份验证</h3>
+            <input type="password" id="passInput" placeholder="输入访问代码..." class="w-full p-4 bg-white/5 border border-white/10 text-white text-center mb-10 focus:outline-none focus:border-[#E0AA79]">
+            <div class="flex gap-6 justify-center">
+                <button onclick="closeModal('passwordModal')" class="text-[10px] uppercase tracking-widest opacity-50 text-white">取消</button>
+                <button onclick="validateAccess()" class="px-10 py-4 bg-[#E0AA79]/20 text-white text-[10px] uppercase tracking-widest border border-[#E0AA79]/30 hover:bg-[#E0AA79]/40 transition">确认</button>
+            </div>
+            <p id="errorMsg" class="text-red-400 text-[10px] mt-6 opacity-0">访问代码无效</p>
+        </div>
     </div>
+
+    <div id="qrCardModal" class="modal-overlay" onclick="closeQRModal(event)">
+        <div class="max-w-[600px] w-[90%] p-8 bg-[#1a1a1a] border border-[#E0AA79]/20 relative" onclick="event.stopPropagation()">
+            <button onclick="document.getElementById('qrCardModal').style.display='none'" class="absolute top-4 right-4 text-stone-500 hover:text-white"><i class="fas fa-times text-xs"></i></button>
+            <h3 class="text-[12px] uppercase tracking-[0.3em] font-light mb-10 text-center text-stone-400">阮进峰 - 电子商务名片</h3>
+            <div class="grid grid-cols-5 gap-3">
+                <div class="col-span-2 row-span-2 bg-black/40 border border-[#E0AA79]/20 p-2 flex items-center justify-center">
+                    <img src="qr-tanphong.png" alt="QR" class="w-full grayscale hover:grayscale-0 transition-all">
+                </div>
+                <a href="https://zalo.me/0915159499" target="_blank" class="lecture-box text-[10px] uppercase">Zalo</a>
+                <a href="https://facebook.com/tanphong1981" target="_blank" class="lecture-box text-[10px] uppercase">Facebook</a>
+                <a href="tel:+84915159499" class="lecture-box text-[10px] uppercase">电话</a>
+                <a href="mailto:hello@nguyentanphong.com" class="lecture-box text-[10px] uppercase">邮箱</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="p-12 md:p-20 flex justify-center stagger">
+        <div class="header-fixed uppercase">知识 • 法律 • 科技</div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center z-10">
+        <div class="mb-12 stagger" style="animation-delay: 0.2s">
+            <div class="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-2 border-[#E0AA79]/30 mx-auto">
+                <img src="avatar-nguyentanphong.jpg" alt="阮进峰" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <h1 class="name-fixed text-center mb-8 stagger" style="animation-delay: 0.4s">阮 进 峰</h1>
+        <div class="w-16 h-[0.5px] bg-[#E0AA79]/50 mb-8 stagger"></div>
+
+        <div class="mb-16 stagger flex flex-col md:flex-row gap-4 w-full px-4 justify-center" style="animation-delay: 0.5s">
+            <button onclick="openQRModal()" class="zen-btn"><i class="fas fa-qrcode mr-3"></i>电子名片</button>
+            <button onclick="document.getElementById('registerModal').style.display='flex'" class="zen-btn"><i class="fas fa-edit mr-3"></i>咨询登记</button>
+            <a href="#" class="zen-btn"><i class="fas fa-file-pdf mr-3"></i>个人资历档案</a>
+        </div>
+
+        <div class="pillar-grid stagger" style="animation-delay: 0.6s">
+            <div class="pillar-box">
+                <i class="fas fa-network-wired text-xl mb-6 text-[#E0AA79]"></i>
+                <h3 class="text-[12px] font-bold tracking-widest mb-4">VECOM</h3>
+                <p class="text-[10px] text-stone-400 uppercase leading-relaxed">越南电子商务协会<br>执行委员会委员<br>南部首席代表</p>
+            </div>
+            <div class="pillar-box">
+                <i class="fas fa-gavel text-xl mb-6 text-[#E0AA79]"></i>
+                <h3 class="text-[12px] font-bold tracking-widest mb-4">CLEAD</h3>
+                <p class="text-[10px] text-stone-400 uppercase leading-relaxed">法律咨询中心<br>主任<br>(VECOM旗下)</p>
+            </div>
+            <div class="pillar-box">
+                <i class="fas fa-scale-balanced text-xl mb-6 text-[#E0AA79]"></i>
+                <h3 class="text-[12px] font-bold tracking-widest mb-4">ARI</h3>
+                <p class="text-[10px] text-stone-400 uppercase leading-relaxed">法学家<br>法律科学与仲裁研究院<br>副院长</p>
+            </div>
+            <div class="pillar-box">
+                <i class="fas fa-handshake-simple text-xl mb-6 text-[#E0AA79]"></i>
+                <h3 class="text-[12px] font-bold tracking-widest mb-4">TRACENT</h3>
+                <p class="text-[10px] text-stone-400 uppercase leading-relaxed">商业仲裁员<br>胡志明市<br>商业仲裁中心</p>
+            </div>
+            <div class="pillar-box">
+                <i class="fas fa-graduation-cap text-xl mb-6 text-[#E0AA79]"></i>
+                <h3 class="text-[12px] font-bold tracking-widest mb-4">EAGLE</h3>
+                <p class="text-[10px] text-stone-400 uppercase leading-relaxed">高级讲师<br>房地产与<br>企业管理专家</p>
+            </div>
+        </div>
+
+        <div class="w-full max-w-6xl mb-32 text-center stagger" style="animation-delay: 1s">
+            <h2 class="text-[12px] font-medium tracking-[0.4em] mb-12 uppercase opacity-40">专家知识库</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <button onclick="openGate('专题讲座 A', '1a', '#')" class="lecture-box">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest">专题讲座 A</h4>
+                </button>
+                <button onclick="openGate('专题讲座 B', '1b', '#')" class="lecture-box">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest">专题讲座 B</h4>
+                </button>
+                <button onclick="openGate('专题讲座 C', '0915159499', '#')" class="lecture-box">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest">专题讲座 C</h4>
+                </button>
+                <button onclick="openGate('专题讲座 D', '0915159499', '#')" class="lecture-box">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest">专题讲座 D</h4>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full max-w-3xl text-center mb-32 stagger" style="animation-delay: 1.2s">
+            <div class="p-12 md:p-24 bg-black/50 border border-[#E0AA79]/20 shadow-2xl relative">
+                <h2 class="text-[12px] font-semibold tracking-[0.4em] mb-12 uppercase">专业文献库</h2>
+                <div class="flex flex-col sm:flex-row gap-8 w-full max-w-sm mx-auto">
+                    <button onclick="openGate('资料', '0915159499', 'https://drive.google.com/...')" class="flex-1 py-5 bg-[#E0AA79] text-black text-[11px] font-bold">立即下载</button>
+                    <button onclick="document.getElementById('registerModal').style.display='flex'" class="flex-1 py-5 bg-black/30 border border-[#E0AA79]/50 text-[11px]">新用户注册</button>
+                </div>
+                <div class="mt-20 pt-12 border-t border-[#E0AA79]/10">
+                    <span class="text-[10px] tracking-[0.3em] uppercase opacity-50 block mb-6">合作伙伴连接数</span>
+                    <span id="loginCount" class="px-6 py-2 border border-[#E0AA79] text-[#E0AA79] tracking-widest">00006875</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full max-w-5xl border-t border-[#E0AA79]/20 pt-16 mb-20 stagger" style="animation-delay: 1.4s">
+            <div class="contact-grid-layout">
+                <a href="tel:+84915159499" class="contact-box-sync">
+                    <i class="fas fa-phone-alt text-lg text-[#E0AA79] mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase">热线电话</span>
+                </a>
+                <a href="mailto:hello@nguyentanphong.com" class="contact-box-sync">
+                    <i class="fas fa-envelope text-lg text-[#E0AA79] mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase">电子邮件</span>
+                </a>
+                <a href="https://zalo.me/0915159499" target="_blank" class="contact-box-sync">
+                    <i class="fas fa-comment-dots text-lg text-[#E0AA79] mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase">Zalo</span>
+                </a>
+                <a href="https://facebook.com/tanphong1981" target="_blank" class="contact-box-sync">
+                    <i class="fab fa-facebook-f text-lg text-[#E0AA79] mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase">Facebook</span>
+                </a>
+                <div class="contact-box-sync opacity-20">
+                    <i class="fab fa-youtube text-lg mb-4"></i>
+                    <span class="text-[10px] font-bold">YouTube</span>
+                </div>
+                <div class="contact-box-sync opacity-20">
+                    <i class="fab fa-linkedin-in text-lg mb-4"></i>
+                    <span class="text-[10px] font-bold">LinkedIn</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="p-16 flex flex-col items-center stagger" style="animation-delay: 1.6s">
+        <img src="NguyenTanPhong.png" alt="Signature" class="signature-img">
+        <div class="text-[10px] text-stone-500 tracking-[0.4em] uppercase">© 1981 阮进峰. 版权所有</div>
+    </footer>
+
+    <script>
+        let currentTarget = ""; let currentCode = "";
+        function openQRModal() { document.getElementById('qrCardModal').style.display = 'flex'; }
+        function closeQRModal(e) { if(e.target.id === 'qrCardModal') { document.getElementById('qrCardModal').style.display = 'none'; } }
+        function openGate(name, code, url) { 
+            document.getElementById('modalTitle').innerText = "身份验证: " + name;
+            document.getElementById('passwordModal').style.display = 'flex'; 
+            currentTarget = url; currentCode = code; 
+        }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+        function validateAccess() {
+            if (document.getElementById('passInput').value === currentCode) {
+                window.location.href = currentTarget;
+            } else { 
+                const err = document.getElementById('errorMsg'); err.style.opacity = 1;
+                setTimeout(() => err.style.opacity = 0, 2000);
+            }
+        }
+    </script>
 </body>
 </html>
-
-```
