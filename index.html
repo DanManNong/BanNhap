@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luật Sư Cao Cấp - Phong & Cộng Sự</title>
+    <title>Chuyên gia Nguyễn Tấn Phong | Pháp lý & Quản trị</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        /* --- THIẾT LẬP CƠ BẢN (RESET) --- */
+        /* --- CẤU HÌNH GỐC (ZEN THEME) --- */
         :root {
-            --primary-color: #2C3E36; /* Xanh rêu đậm - Uy quyền, điềm tĩnh */
-            --secondary-color: #A69076; /* Màu vàng cát/gỗ - Sang trọng */
-            --bg-color: #F7F5F0; /* Màu giấy gạo/kem - Nền nã, Zen */
-            --text-color: #333333;
-            --white: #FFFFFF;
-            --transition-speed: 0.5s;
+            --bg-color: #Fdfbf7; /* Màu giấy gạo cũ */
+            --text-primary: #2C3632; /* Màu than chì pha xanh rêu */
+            --text-secondary: #6D7672;
+            --accent-color: #A49575; /* Màu vàng tre khô */
+            --dark-green: #1A2621;
+            --glass-bg: rgba(253, 251, 247, 0.85);
+            --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         * {
@@ -28,396 +32,409 @@
         body {
             font-family: 'Manrope', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            color: var(--text-primary);
             overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        a { text-decoration: none; color: inherit; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
 
-        /* --- HEADER & NAVIGATION --- */
-        header {
+        /* --- THANH ĐIỀU HƯỚNG (NAVIGATION) --- */
+        nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 50px;
+            padding: 25px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(247, 245, 240, 0.9); /* Kính mờ */
-            backdrop-filter: blur(10px);
             z-index: 1000;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            transition: padding 0.3s;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 600;
             letter-spacing: -0.5px;
+            color: var(--dark-green);
         }
+
+        .logo span { font-weight: 300; color: var(--accent-color); }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 50px;
         }
 
         .nav-links a {
             font-size: 0.95rem;
+            color: var(--text-primary);
             font-weight: 500;
-            color: var(--primary-color);
             position: relative;
-            transition: color 0.3s;
         }
 
-        /* Hiệu ứng gạch chân chạy từ trái sang */
         .nav-links a::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 1px;
             bottom: -5px;
             left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
+            width: 0;
+            height: 1px;
+            background: var(--accent-color);
+            transition: width 0.4s;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
-        .btn-contact {
-            padding: 12px 28px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 30px; /* Bo tròn mềm mại */
+        .btn-cta {
+            padding: 12px 35px;
+            border: 1px solid var(--text-primary);
+            border-radius: 50px;
+            font-size: 0.9rem;
             font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background: transparent;
+            cursor: pointer;
         }
 
-        .btn-contact:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            transform: translateY(-3px); /* Nổi lên nhẹ */
-            box-shadow: 0 10px 20px rgba(44, 62, 54, 0.15);
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0; height: 100%;
+            background: var(--text-primary);
+            z-index: -1;
+            transition: var(--transition);
         }
 
-        /* --- HERO SECTION --- */
+        .btn-cta:hover { color: #fff; border-color: transparent; }
+        .btn-cta:hover::before { width: 100%; }
+
+        /* --- HERO SECTION (PHẦN MỞ ĐẦU) --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 10%;
+            padding: 100px 60px 0;
             position: relative;
         }
 
         .hero-content {
             flex: 1;
-            padding-right: 50px;
+            padding-right: 5%;
             z-index: 2;
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 300; /* Nét mỏng sang trọng */
-            color: var(--primary-color);
+        .hero-label {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--accent-color);
             margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s forwards 0.5s;
+            display: block;
+            font-size: 1.2rem;
         }
 
-        .hero-title strong {
-            font-weight: 700;
-            display: block;
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: var(--dark-green);
         }
+
+        .hero-title strong { font-weight: 600; }
 
         .hero-desc {
             font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 40px;
+            color: var(--text-secondary);
             max-width: 500px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s forwards 0.8s;
+            margin-bottom: 50px;
         }
 
-        .hero-image-wrapper {
+        /* Khung hình ảnh nghệ thuật */
+        .hero-image-container {
             flex: 1;
-            height: 70vh;
+            height: 80vh;
             position: relative;
+            border-radius: 200px 200px 0 0; /* Hình vòm cửa sổ */
             overflow: hidden;
-            border-radius: 200px 200px 20px 20px; /* Hình dáng vòm cung (Arch) */
+            transform: translateY(50px);
             opacity: 0;
-            transform: scale(0.95);
-            animation: scaleIn 1.2s forwards 0.2s;
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+            animation: slideUp 1.2s forwards 0.3s;
         }
 
         .hero-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 3s ease; /* Zoom chậm khi hover */
+            /* Placeholder ảnh: Chú thay link ảnh của chú vào đây */
+            background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop') center/cover no-repeat;
+            transition: transform 2s ease;
         }
 
-        .hero-image-wrapper:hover .hero-image {
+        .hero-image-container:hover .hero-image {
             transform: scale(1.05);
         }
 
-        /* Nút trang trí Zen */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0.6;
-            animation: bounce 2s infinite;
-        }
-        
-        .scroll-text {
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        /* --- SERVICES SECTION --- */
-        .section {
-            padding: 100px 10%;
+        /* --- SECTION: CREDENTIALS (UY TÍN) --- */
+        .credentials {
+            padding: 100px 60px;
+            background: #fff;
         }
 
         .section-header {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
             margin-bottom: 80px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 30px;
         }
 
         .section-title {
             font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
+            font-weight: 300;
         }
 
-        .divider {
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 0 auto;
-        }
-
-        .services-grid {
+        .grid-roles {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
         }
 
-        .service-card {
-            background: var(--white);
+        .role-card {
             padding: 40px;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.03);
+            background: var(--bg-color);
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .role-card:hover {
+            transform: translateY(-10px);
+            background: var(--dark-green);
+            color: #fff;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .role-card:hover .role-icon { color: var(--accent-color); }
+        .role-card:hover .role-desc { color: rgba(255,255,255,0.7); }
+
+        .role-icon {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .role-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .role-org {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--accent-color);
+        }
+
+        .role-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        /* --- QUOTE SECTION (TRIẾT LÝ) --- */
+        .quote-section {
+            padding: 150px 10%;
+            text-align: center;
+            background-color: var(--dark-green);
+            color: #fff;
             position: relative;
             overflow: hidden;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background-color: var(--secondary-color);
-            transition: height 0.4s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .service-card:hover::before {
-            height: 100%;
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .service-title {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .service-desc {
-            font-size: 0.95rem;
-            color: #777;
-        }
-
-        /* --- QUOTE SECTION (ZEN MODE) --- */
-        .quote-section {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 120px 20%;
-            position: relative;
-        }
-
         .quote-text {
-            font-size: 1.8rem;
-            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             font-style: italic;
-            line-height: 1.6;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
 
         .quote-author {
-            margin-top: 30px;
-            font-weight: 600;
-            color: var(--secondary-color);
-            letter-spacing: 1px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        /* Hoa văn trang trí Zen mờ */
+        .zen-pattern {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 600px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .zen-pattern::before {
+            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 80%; height: 80%; border: 1px solid rgba(255,255,255,0.05); border-radius: 50%;
         }
 
         /* --- FOOTER --- */
         footer {
-            padding: 60px 10%;
-            background-color: #222;
-            color: #888;
+            padding: 80px 60px;
+            background: #fff;
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
             align-items: center;
-            font-size: 0.9rem;
+            gap: 15px;
+            color: var(--text-secondary);
         }
 
-        /* --- ANIMATIONS --- */
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; padding-top: 120px; text-align: center; }
+            .hero-content { padding-right: 0; margin-bottom: 50px; }
+            .hero-title { font-size: 3rem; }
+            .grid-roles { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero-image-container { width: 100%; height: 50vh; }
         }
 
-        @keyframes scaleIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+        /* --- ANIMATION KEYFRAMES --- */
+        @keyframes slideUp {
+            to { transform: translateY(0); opacity: 1; }
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
-            40% {transform: translateY(-10px) translateX(-50%);}
-            60% {transform: translateY(-5px) translateX(-50%);}
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; padding-top: 100px; text-align: center; height: auto; padding-bottom: 50px;}
-            .hero-content { padding-right: 0; margin-top: 40px; }
-            .hero-title { font-size: 2.5rem; }
-            .hero-image-wrapper { width: 100%; height: 400px; }
-            header { padding: 15px 20px; }
-            .nav-links { display: none; /* Ẩn menu trên mobile cho đơn giản demo */ }
-        }
-
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">PHONG LAW.</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Lĩnh vực</a></li>
-                <li><a href="#">Triết lý</a></li>
-                <li><a href="#">Tin tức</a></li>
-            </ul>
-        </nav>
-        <a href="#" class="btn-contact">Liên hệ ngay</a>
-    </header>
+    <nav>
+        <div class="logo">NGUYEN TAN <span>PHONG.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#roles">Lĩnh vực & Chức vụ</a></li>
+            <li><a href="#training">Đào tạo</a></li>
+            <li><a href="#news">Tin tức</a></li>
+        </ul>
+        <button class="btn-cta" onclick="window.location.href='mailto:contact@nguyentanphong.com'">Liên hệ trực tiếp</button>
+    </nav>
 
     <section class="hero">
         <div class="hero-content">
+            <span class="hero-label">Chuyên gia - Luật gia - Giảng viên</span>
             <h1 class="hero-title">
-                Công lý & <br>
-                <strong>Sự An Tâm</strong>
+                Sự minh bạch là nền tảng của <br>
+                <strong>Thịnh Vượng Bền Vững</strong>
             </h1>
             <p class="hero-desc">
-                Với hơn 25 năm kinh nghiệm, chúng tôi mang đến các giải pháp pháp lý toàn diện, minh bạch và hiệu quả. Nơi niềm tin được đặt đúng chỗ.
+                Hơn 20 năm kinh nghiệm trong lĩnh vực Trọng tài Thương mại, Quản trị Doanh nghiệp và Thương mại điện tử. Đồng hành cùng doanh nghiệp Việt vươn tầm.
             </p>
-            <a href="#" class="btn-contact" style="background-color: var(--secondary-color); border:none;">Đặt lịch tư vấn</a>
-        </div>
-        
-        <div class="hero-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Luật sư Phong" class="hero-image">
+            <div style="display: flex; gap: 20px;">
+                <a href="#roles" class="btn-cta" style="background: var(--text-primary); color: #fff;">Xem hồ sơ năng lực</a>
+            </div>
         </div>
 
-        <div class="scroll-indicator">
-            <span class="scroll-text">Kéo xuống</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        <div class="hero-image-container">
+            <div class="hero-image"></div> 
         </div>
     </section>
 
-    <section class="section">
+    <section class="credentials" id="roles">
         <div class="section-header">
-            <h2 class="section-title">Lĩnh Vực Chuyên Môn</h2>
-            <div class="divider"></div>
+            <h2 class="section-title">Vị Trí & Trách Nhiệm</h2>
+            <div style="max-width: 400px; color: #666;">
+                Đảm nhiệm các vai trò chủ chốt tại các tổ chức uy tín hàng đầu Việt Nam về Pháp lý và Thương mại.
+            </div>
         </div>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">⚖️</div>
-                <h3 class="service-title">Tố tụng & Tranh chấp</h3>
-                <p class="service-desc">Bảo vệ quyền lợi khách hàng tại tòa án với chiến lược sắc bén và thấu đáo nhất.</p>
+
+        <div class="grid-roles">
+            <div class="role-card">
+                <i class="fas fa-balance-scale role-icon"></i>
+                <span class="role-org">ARI & TRACENT</span>
+                <h3 class="role-name">Trọng Tài & Pháp Lý</h3>
+                <p class="role-desc">
+                    Phó Viện Trưởng Viện Khoa học pháp lý trọng tài (ARI). Trọng tài viên tại Trung tâm trọng tài thương mại (TRACENT).
+                </p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">🏢</div>
-                <h3 class="service-title">Tư vấn Doanh nghiệp</h3>
-                <p class="service-desc">Đồng hành cùng sự phát triển bền vững của doanh nghiệp qua mọi giai đoạn pháp lý.</p>
+            <div class="role-card">
+                <i class="fas fa-globe-asia role-icon"></i>
+                <span class="role-org">VECOM & CLEAD</span>
+                <h3 class="role-name">Thương Mại Điện Tử</h3>
+                <p class="role-desc">
+                    Uỷ viên Ban Chấp Hành, Trưởng Ban Kiểm Tra VECOM. Giám đốc Trung tâm tư vấn pháp luật (CLEAD).
+                </p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">🤝</div>
-                <h3 class="service-title">Hôn nhân & Gia đình</h3>
-                <p class="service-desc">Giải quyết các vấn đề tế nhị với sự tôn trọng, bảo mật và nhân văn cao nhất.</p>
+            <div class="role-card">
+                <i class="fas fa-chalkboard-teacher role-icon"></i>
+                <span class="role-org">EAGLE ACADEMY</span>
+                <h3 class="role-name">Giảng Viên Cao Cấp</h3>
+                <p class="role-desc">
+                    Đào tạo chuyên sâu về Bất động sản và Quản trị Doanh nghiệp. Định hướng chiến lược cho lãnh đạo.
+                </p>
             </div>
         </div>
     </section>
 
     <section class="quote-section">
+        <div class="zen-pattern"></div>
         <p class="quote-text">
-            "Luật pháp không chỉ là những quy định khô khan, mà là nghệ thuật của sự cân bằng và lẽ phải. Nhiệm vụ của tôi là tìm ra điểm cân bằng đó cho bạn."
+            "Pháp luật không chỉ là công cụ để giải quyết tranh chấp,<br>mà là nghệ thuật để kiến tạo sự phát triển."
         </p>
-        <p class="quote-author">— Luật sư Trần Văn Phong</p>
+        <p class="quote-author">— Nguyễn Tấn Phong</p>
     </section>
 
     <footer>
-        <div>© 2024 Phong Law Firm. All rights reserved.</div>
-        <div style="display: flex; gap: 20px;">
-            <a href="#">LinkedIn</a>
-            <a href="#">Facebook</a>
-            <a href="#">Email</a>
+        <div class="footer-info">
+            <h3>NGUYEN TAN PHONG.</h3>
+            <p style="color: #888; max-width: 300px;">
+                Kết nối tri thức, kiến tạo giá trị và bảo vệ sự công bằng trong kinh doanh.
+            </p>
+        </div>
+        
+        <div>
+            <h4 style="margin-bottom: 20px;">Liên hệ công việc</h4>
+            <ul class="contact-list">
+                <li><i class="fas fa-envelope"></i> info@nguyentanphong.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh, Việt Nam</li>
+                <li><i class="fas fa-globe"></i> www.nguyentanphong.com</li>
+            </ul>
         </div>
     </footer>
 
     <script>
-        // Hiệu ứng Fade-in khi cuộn chuột
-        const observerOptions = {
-            threshold: 0.2
-        };
-
+        // Hiệu ứng Fade-in khi cuộn trang (Scroll Reveal)
+        const observerOptions = { threshold: 0.15 };
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -427,12 +444,11 @@
             });
         }, observerOptions);
 
-        // Áp dụng cho các card dịch vụ
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.style.transition = `all 0.6s ease ${index * 0.1}s`; // Stagger effect
-            observer.observe(card);
+        document.querySelectorAll('.role-card, .hero-title, .hero-desc').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
         });
     </script>
 </body>
